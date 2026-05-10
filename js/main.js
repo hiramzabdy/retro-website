@@ -1,7 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
   initStarfield();
   initCursorTrail();
-  initActiveNav();
 });
 
 function initStarfield() {
@@ -17,9 +16,9 @@ function initStarfield() {
   }
 
   function createStars() {
-    const count = Math.floor((canvas.width * canvas.height) / 2000);
+    const maxStars = Math.min(500, Math.floor((canvas.width * canvas.height) / 2000));
     stars = [];
-    for (let i = 0; i < count; i++) {
+    for (let i = 0; i < maxStars; i++) {
       stars.push({
         x: Math.random() * canvas.width,
         y: Math.random() * canvas.height,
@@ -52,6 +51,7 @@ function initStarfield() {
       ctx.fill();
     });
 
+    ctx.globalAlpha = 1;
     animationId = requestAnimationFrame(animate);
   }
 
@@ -70,8 +70,6 @@ function initCursorTrail() {
   if (!canvas) return;
   const ctx = canvas.getContext('2d');
   let particles = [];
-  let mouseX = -100;
-  let mouseY = -100;
 
   function resize() {
     canvas.width = window.innerWidth;
@@ -82,14 +80,11 @@ function initCursorTrail() {
   window.addEventListener('resize', resize);
 
   document.addEventListener('mousemove', function(e) {
-    mouseX = e.clientX;
-    mouseY = e.clientY;
-
     const colors = ['#ff6ec7', '#39ff14', '#00d4ff', '#ffff00', '#ff6600', '#cc00ff'];
     for (let i = 0; i < 2; i++) {
       particles.push({
-        x: mouseX + (Math.random() - 0.5) * 10,
-        y: mouseY + (Math.random() - 0.5) * 10,
+        x: e.clientX + (Math.random() - 0.5) * 10,
+        y: e.clientY + (Math.random() - 0.5) * 10,
         vx: (Math.random() - 0.5) * 2,
         vy: (Math.random() - 0.5) * 2,
         life: 1,
@@ -98,6 +93,7 @@ function initCursorTrail() {
         color: colors[Math.floor(Math.random() * colors.length)]
       });
     }
+    if (particles.length > 300) particles.splice(0, particles.length - 300);
   });
 
   function animate() {
@@ -112,35 +108,17 @@ function initCursorTrail() {
 
       ctx.beginPath();
       ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
-      ctx.fillStyle = p.color;
       ctx.globalAlpha = p.life;
-      ctx.fill();
+      ctx.fillStyle = p.color;
       ctx.shadowBlur = 5;
       ctx.shadowColor = p.color;
       ctx.fill();
       ctx.shadowBlur = 0;
     });
-    ctx.globalAlpha = 1;
 
+    ctx.globalAlpha = 1;
     requestAnimationFrame(animate);
   }
 
   animate();
-}
-
-function initActiveNav() {
-  const currentPath = window.location.pathname;
-  const navLinks = document.querySelectorAll('.nav-link');
-
-  navLinks.forEach(link => {
-    const linkPath = link.getAttribute('href');
-    if (linkPath && currentPath.includes(linkPath.replace('./', '').replace('../', ''))) {
-      link.classList.add('active');
-    }
-  });
-
-  if (currentPath === '/' || currentPath.endsWith('index.html') || currentPath === '') {
-    const homeLink = document.querySelector('.nav-link[href="index.html"]');
-    if (homeLink) homeLink.classList.add('active');
-  }
 }

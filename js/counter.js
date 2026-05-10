@@ -1,4 +1,9 @@
 document.addEventListener('DOMContentLoaded', function() {
+  const isIndex = window.location.pathname === '/' ||
+                  window.location.pathname.endsWith('/index.html') ||
+                  window.location.pathname === '';
+  if (!isIndex) return;
+
   const counterElements = document.querySelectorAll('.counter-digits');
   if (counterElements.length === 0) return;
 
@@ -12,11 +17,10 @@ document.addEventListener('DOMContentLoaded', function() {
     el.textContent = displayNum;
   });
 
-  const count = visits;
   const milestones = [100, 500, 1000, 5000, 10000, 50000, 100000];
 
   milestones.forEach(m => {
-    if (count === m) {
+    if (visits === m) {
       const msg = document.createElement('div');
       msg.style.cssText = `
         position: fixed;

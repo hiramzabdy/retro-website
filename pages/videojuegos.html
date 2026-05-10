@@ -6,362 +6,138 @@
 <title>~*~ Videojuegos 2000s ~*~ Retro</title>
 <link rel="stylesheet" href="../css/style.css">
 <style>
-.game-section {
-  border: 2px ridge var(--neon-green);
-  background: rgba(0, 0, 0, 0.5);
-  padding: 15px;
-  margin: 12px 0;
-}
-.game-section h3 {
-  margin-bottom: 8px;
-}
-.console-badge {
-  display: inline-block;
-  font-family: var(--font-pixel);
-  font-size: 7px;
-  padding: 3px 8px;
-  border-radius: 2px;
-  margin: 2px;
-}
+.game-section { border: 2px ridge var(--neon-green); background: rgba(0, 0, 0, 0.5); padding: 15px; margin: 12px 0; }
+.game-section h3 { margin-bottom: 8px; }
+.console-badge { display: inline-block; font-family: var(--font-pixel); font-size: 7px; padding: 3px 8px; margin: 2px; }
 .console-ps2 { background: #003399; color: #fff; border: 1px solid #0066ff; }
 .console-xbox { background: #107c10; color: #fff; border: 1px solid #00ff00; }
 .console-gc { background: #6644cc; color: #fff; border: 1px solid #9966ff; }
 .console-pc { background: #444; color: #fff; border: 1px solid #888; }
 .console-gba { background: #cc00cc; color: #fff; border: 1px solid #ff66ff; }
-.game-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin-top: 10px;
-}
-.game-card {
-  flex: 1 1 180px;
-  border: 1px solid var(--neon-blue);
-  padding: 8px;
-  text-align: center;
-  background: rgba(0, 0, 0, 0.6);
-}
-.game-card .game-icon {
-  font-size: 40px;
-  margin-bottom: 5px;
-}
-.game-card .game-title {
-  font-family: var(--font-pixel);
-  font-size: 7px;
-  color: var(--neon-yellow);
-}
-.game-card .game-year {
-  font-size: 10px;
-  color: var(--neon-blue);
-  margin-top: 3px;
-}
+.game-list { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 10px; }
+.game-card { flex: 1 1 180px; border: 1px solid var(--neon-blue); padding: 8px; text-align: center; background: rgba(0, 0, 0, 0.6); }
+.game-card .game-icon { font-size: 40px; margin-bottom: 5px; }
+.game-card .game-title { font-family: var(--font-pixel); font-size: 7px; color: var(--neon-yellow); }
+.game-card .game-year { font-size: 10px; color: var(--neon-blue); margin-top: 3px; }
 </style>
 </head>
 <body>
-
 <canvas id="starfield"></canvas>
 <canvas id="cursor-trail"></canvas>
 
-<div class="construction-bar blink-fast">
-  &#x1F6A7; SITIO EN CONSTRUCCI&#xD3;N PERMANENTE &#x1F6A7;
+<div id="page-content" data-page="videojuegos" data-title="VIDEOJUEGOS 2000s" data-subtitle="Cuando rentar juegos en Blockbuster era la onda">
+
+<div class="marquee-container">
+  <span class="marquee-text">
+    &#x1F3AE; PS2 &#x1F3AE; Xbox &#x1F3AE; GameCube &#x1F3AE; Game Boy Advance &#x1F3AE; Counter-Strike 1.6 &#x1F3AE; Ragnar&#xF6;k Online &#x1F3AE; Gunbound &#x1F3AE; MapleStory &#x1F3AE; Half-Life 2 &#x1F3AE;
+  </span>
 </div>
 
-<table id="main-table" cellpadding="0" cellspacing="0">
-  <tr>
-    <td colspan="2" id="header">
-      <h1>~*~ VIDEOJUEGOS 2000s ~*~</h1>
-      <p style="color:var(--neon-blue);font-family:'Comic Sans MS',cursive;font-style:italic;font-size:14px;">
-        Cuando rentar juegos en Blockbuster era la onda
-      </p>
-      <div class="sparkle-divider">&#x1F3AE; &#x1F579; &#x1F3AE; &#x1F579; &#x1F3AE; &#x1F579; &#x1F3AE;</div>
-    </td>
-  </tr>
-  <tr>
-    <td id="nav">
-      <div class="nav-title">&#x25C9; NAVEGACI&#xD3;N</div>
-      <a href="../index.html" class="nav-link">Inicio</a>
-      <a href="musica.html" class="nav-link">M&#xFA;sica</a>
-      <a href="tecnologia.html" class="nav-link">Tecnolog&#xED;a</a>
-      <a href="videojuegos.html" class="nav-link active">Videojuegos</a>
-      <a href="internet.html" class="nav-link">Internet</a>
-      <a href="guestbook.html" class="nav-link">Guestbook</a>
-      <a href="galeria.html" class="nav-link">Galer&#xED;a</a>
-      <a href="quiz.html" class="nav-link">Quiz</a>
-      <div class="nav-counter">
-        <div class="nav-counter-title">Visitante #</div>
-        <div class="nav-counter-digits counter-digits">0000001</div>
-      </div>
-    </td>
-    <td id="content">
-      <div class="marquee-container">
-        <span class="marquee-text">
-          &#x1F3AE; PS2 &#x1F3AE; Xbox &#x1F3AE; GameCube &#x1F3AE; Game Boy Advance &#x1F3AE; Counter-Strike 1.6 &#x1F3AE; Ragnar&#xF6;k Online &#x1F3AE; Gunbound &#x1F3AE; MapleStory &#x1F3AE; Half-Life 2 &#x1F3AE;
-        </span>
-      </div>
+<h2>&#x1F3AE; Las Consolas que dominaron</h2>
 
-      <h2>&#x1F3AE; Las Consolas que dominaron</h2>
-
-      <div class="game-section">
-        <h3>&#x1F3AE; PlayStation 2 (2000-2012)</h3>
-        <span class="console-badge console-ps2">PS2</span>
-        <span class="console-badge console-ps2">128-bit Emotion Engine</span>
-        <p class="content-text" style="margin-top:8px;">
-          La consola m&#xE1;s vendida de la historia (155 millones). Reproduc&#xED;a DVDs, lo cual
-          era un FEATURE ENORME en el 2000. Juegos en CDs azules (CD-ROM) y plateados (DVD-ROM).
-          Memory Card de 8MB donde cab&#xED;an como 30 partidas guardadas. El DualShock 2
-          con sus sticks anal&#xF3;gicos era pura magia.
-        </p>
-        <div class="game-list">
-          <div class="game-card">
-            <div class="game-icon">&#x1F3CE;</div>
-            <div class="game-title">Gran Turismo 4</div>
-            <div class="game-year">2004</div>
-          </div>
-          <div class="game-card">
-            <div class="game-icon">&#x1F4BF;</div>
-            <div class="game-title">Final Fantasy X</div>
-            <div class="game-year">2001</div>
-          </div>
-          <div class="game-card">
-            <div class="game-icon">&#x1F480;</div>
-            <div class="game-title">God of War II</div>
-            <div class="game-year">2007</div>
-          </div>
-          <div class="game-card">
-            <div class="game-icon">&#x1F3C3;</div>
-            <div class="game-title">GTA San Andreas</div>
-            <div class="game-year">2004</div>
-          </div>
-          <div class="game-card">
-            <div class="game-icon">&#x1F3B5;</div>
-            <div class="game-title">Guitar Hero III</div>
-            <div class="game-year">2007</div>
-          </div>
-          <div class="game-card">
-            <div class="game-icon">&#x26BD;</div>
-            <div class="game-title">PES 6 / WE10</div>
-            <div class="game-year">2006</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="game-section">
-        <h3>&#x1F3AE; Xbox (2001-2008)</h3>
-        <span class="console-badge console-xbox">XBOX</span>
-        <span class="console-badge console-xbox">Pentium III 733MHz</span>
-        <p class="content-text" style="margin-top:8px;">
-          El gigante negro de Microsoft entr&#xF3; fuerte. El primer control era ENORME
-          (luego sacaron el "Controller S"). Tra&#xED;a disco duro interno (8-10GB), sin
-          necesidad de memory cards. Xbox Live en 2002 revolucion&#xF3; el juego en l&#xED;nea
-          en consolas. Halo era EL juego. El "Duke" controller pod&#xED;a matar a alguien.
-        </p>
-        <div class="game-list">
-          <div class="game-card">
-            <div class="game-icon">&#x1F6C0;</div>
-            <div class="game-title">Halo 2</div>
-            <div class="game-year">2004</div>
-          </div>
-          <div class="game-card">
-            <div class="game-icon">&#x1F920;</div>
-            <div class="game-title">Fable</div>
-            <div class="game-year">2004</div>
-          </div>
-          <div class="game-card">
-            <div class="game-icon">&#x1F5E1;</div>
-            <div class="game-title">Ninja Gaiden</div>
-            <div class="game-year">2004</div>
-          </div>
-          <div class="game-card">
-            <div class="game-icon">&#x1F916;</div>
-            <div class="game-title">Elder Scrolls III</div>
-            <div class="game-year">2002</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="game-section">
-        <h3>&#x1F3AE; GameCube (2001-2007)</h3>
-        <span class="console-badge console-gc">GameCube</span>
-        <span class="console-badge console-gc">Mini-DVD</span>
-        <p class="content-text" style="margin-top:8px;">
-          El cubo morado de Nintendo con discos MINI-DVD de 1.5GB. El control m&#xE1;s
-          c&#xF3;modo jam&#xE1;s creado (bot&#xF3;n A gigante verde, B rojo chiquito). El "handle"
-          para cargarlo a fiestas. WaveBird Wireless Controller! Cuatro entradas de
-          control integradas. Mario Kart Double Dash con doble personaje por kart.
-        </p>
-        <div class="game-list">
-          <div class="game-card">
-            <div class="game-icon">&#x1F3B4;</div>
-            <div class="game-title">Zelda Wind Waker</div>
-            <div class="game-year">2003</div>
-          </div>
-          <div class="game-card">
-            <div class="game-icon">&#x1F3C1;</div>
-            <div class="game-title">Mario Kart DD</div>
-            <div class="game-year">2003</div>
-          </div>
-          <div class="game-card">
-            <div class="game-icon">&#x1F916;</div>
-            <div class="game-title">Metroid Prime</div>
-            <div class="game-year">2002</div>
-          </div>
-          <div class="game-card">
-            <div class="game-icon">&#x1F94A;</div>
-            <div class="game-title">Smash Melee</div>
-            <div class="game-year">2001</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="game-section">
-        <h3>&#x1F3AE; Game Boy Advance (2001-2008)</h3>
-        <span class="console-badge console-gba">GBA</span>
-        <span class="console-badge console-gba">GBA SP</span>
-        <p class="content-text" style="margin-top:8px;">
-          El Game Boy con luz al fin! El GBA SP (2003) tra&#xED;a pantalla iluminada
-          y era plegable. Litio-Ion recargable (adi&#xF3;s pilas AA). Retrocompatible
-          con Game Boy y Game Boy Color. El link cable serv&#xED;a para intercambiar
-          Pokemon y jugar multiplayer. Ese accesorio con lupa y luz externa.
-        </p>
-        <div class="game-list">
-          <div class="game-card">
-            <div class="game-icon">&#x1F525;</div>
-            <div class="game-title">Pokemon Ruby/Sapp</div>
-            <div class="game-year">2003</div>
-          </div>
-          <div class="game-card">
-            <div class="game-icon">&#x1F5E1;</div>
-            <div class="game-title">Golden Sun</div>
-            <div class="game-year">2001</div>
-          </div>
-          <div class="game-card">
-            <div class="game-icon">&#x2B50;</div>
-            <div class="game-title">Superstar Saga</div>
-            <div class="game-year">2003</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="rainbow-divider"><hr></div>
-
-      <h2>&#x1F4BB; Juegos de PC Legendarios</h2>
-
-      <div class="game-section">
-        <h3>&#x1F52B; Counter-Strike 1.6 (2003)</h3>
-        <span class="console-badge console-pc">PC</span>
-        <span class="console-badge console-pc">Half-Life Mod</span>
-        <p class="content-text" style="margin-top:8px;">
-          EL juego de cyber. Terroristas vs Counter-Terroristas. Los mapas m&#xED;ticos:
-          de_dust2, cs_assault, cs_office, fy_pool_day. El AWP era "el cuerno de chivo".
-          "&#xA1;C&#xFA;breme!", "Nice shot", "OMG WALLHACK!". Steam lleg&#xF3; en 2003 y nadie lo
-          quer&#xED;a... ahora es el monopolio. Servidores dedicados con mods: zombie plague,
-          superhero, jailbreak, surf, deathrun, KZ.
-        </p>
-      </div>
-
-      <div class="game-section">
-        <h3>&#x2694;&#xFE0F; Ragnar&#xF6;k Online (2002)</h3>
-        <span class="console-badge console-pc">PC</span>
-        <span class="console-badge console-pc">MMORPG</span>
-        <p class="content-text" style="margin-top:8px;">
-          El MMORPG que enganch&#xF3; a TODA Latinoam&#xE9;rica. Gr&#xE1;ficos 2D isom&#xE9;tricos con
-          sprites preciosos. Porings! La banda sonora de SoundTeMP es legendaria. 
-          WoE (War of Emperium) los fines de semana. Farmear cartas por horas.
-          Prontera llena de merchants vendiendo. Servidores privados con rates x9999.
-          "vendo +7 muffler[1] 8.5m pvp"
-        </p>
-      </div>
-
-      <div class="game-section">
-        <h3>&#x1F4A3; Gunbound (2003)</h3>
-        <span class="console-badge console-pc">PC</span>
-        <span class="console-badge console-pc">Softnyx</span>
-        <p class="content-text" style="margin-top:8px;">
-          Similar a Worms pero con veh&#xED;culos estilo anime. "Drag&#xF3;n", "Boomer", "Lightning",
-          "Ice", "Mage". El "Dragon Full Power" te mataba de un disparo. Los avatares y
-          items premium te hac&#xED;an ver PRO. "pasame la formula del dragon pls"
-          "no me cagues el tiro" "ss = backshot" "gg wp"
-        </p>
-      </div>
-
-      <div class="game-section">
-        <h3>&#x1F341; MapleStory (2003)</h3>
-        <span class="console-badge console-pc">PC</span>
-        <span class="console-badge console-pc">Nexon</span>
-        <p class="content-text" style="margin-top:8px;">
-          MMORPG 2D lateral con gr&#xE1;ficos super cute. "J&gt;PQ" (jalo party quest).
-          Henesys PQ, Kerning PQ, Ludibrium PQ. Los 4 jobs: Magician, Thief, Warrior,
-          Bowmand. Pasar de level 30 a 70 tomaba semanas. FM (Free Market) lleno de tiendas.
-          "@@@@@@ S&gt; ilbis 30m @@@@@@" - Comunicaci&#xF3;n pura en el chat.
-        </p>
-      </div>
-
-      <div class="game-section">
-        <h3>&#x1F4A5; Half-Life 2 (2004)</h3>
-        <span class="console-badge console-pc">PC</span>
-        <span class="console-badge console-pc">Source Engine</span>
-        <p class="content-text" style="margin-top:8px;">
-          Revolucion&#xF3; los FPS con f&#xED;sicas realistas (Havok). La Gravity Gun era
-          lo m&#xE1;s revolucionario. El G-Man con su malet&#xED;n. Ravenholm... esas
-          hordas de zombies r&#xE1;pidos. "The right man in the wrong place".
-          Esperamos Half-Life 3 hasta el d&#xED;a de hoy.
-        </p>
-      </div>
-
-      <div class="highlight-box" style="margin-top:15px;">
-        <p>&#x2728; &#xBF;Qu&#xE9; es un cybercaf&#xE9; sin estos cl&#xE1;sicos? &#x2728;<br>
-        &#x1F3AE; CS 1.6 &#x1F3AE; RO &#x1F3AE; Gunbound &#x1F3AE; MapleStory &#x1F3AE; Warcraft III &#x1F3AE;<br>
-        &#x1F3AE; Age of Empires II &#x1F3AE; Starcraft &#x1F3AE; MU Online &#x1F3AE; Tibia &#x1F3AE; Diablo II &#x1F3AE;</p>
-      </div>
-    </td>
-  </tr>
-  <tr>
-    <td colspan="2" id="footer">
-      <p class="footer-text">&#xA9; 2001-2009 Retro 2000s. Todos los derechos reservados.</p>
-      <div class="footer-credits">
-        <span>&#x2728; Hecho con Notepad</span>
-        <span>&#x2728; Pure HTML 4.01</span>
-        <span>&#x2728; CSS + JS Vanilla</span>
-      </div>
-    </td>
-  </tr>
-</table>
-
-<div id="music-player">
-  <div class="player-window">
-    <div class="player-titlebar">
-      <span>&#x266B; Winamp 2.91</span>
-      <span class="window-btn close">X</span>
-    </div>
-    <div class="player-body">
-      <div class="player-display">
-        <div class="player-title marquee">Complicated</div>
-        <div class="player-artist">Avril Lavigne</div>
-        <div class="player-progress">
-          <div class="player-progress-fill" style="width:0%"></div>
-        </div>
-        <div class="player-time">
-          <span class="player-current-time">0:00</span>
-          <span class="player-total-time">3:20</span>
-        </div>
-      </div>
-      <div class="player-controls">
-        <button class="player-btn player-btn-prev">&#x25C0;&#x25C0;</button>
-        <button class="player-btn player-btn-play">&#x25B6;</button>
-        <button class="player-btn player-btn-stop">&#x25A0;</button>
-        <button class="player-btn player-btn-next">&#x25B6;&#x25B6;</button>
-      </div>
-      <div class="player-volume">
-        <label>&#x1F50A;</label>
-        <input type="range" min="0" max="1" step="0.1" value="0.7">
-      </div>
-    </div>
+<div class="game-section">
+  <h3>&#x1F3AE; PlayStation 2 (2000-2012)</h3>
+  <span class="console-badge console-ps2">PS2</span>
+  <span class="console-badge console-ps2">128-bit Emotion Engine</span>
+  <p class="content-text" style="margin-top:8px;">La consola m&#xE1;s vendida de la historia (155 millones). Reproduc&#xED;a DVDs, lo cual era un FEATURE ENORME en el 2000. El DualShock 2 con sus sticks anal&#xF3;gicos era pura magia.</p>
+  <div class="game-list">
+    <div class="game-card"><div class="game-icon">&#x1F3CE;</div><div class="game-title">Gran Turismo 4</div><div class="game-year">2004</div></div>
+    <div class="game-card"><div class="game-icon">&#x1F4BF;</div><div class="game-title">Final Fantasy X</div><div class="game-year">2001</div></div>
+    <div class="game-card"><div class="game-icon">&#x1F480;</div><div class="game-title">God of War II</div><div class="game-year">2007</div></div>
+    <div class="game-card"><div class="game-icon">&#x1F3C3;</div><div class="game-title">GTA San Andreas</div><div class="game-year">2004</div></div>
+    <div class="game-card"><div class="game-icon">&#x1F3B5;</div><div class="game-title">Guitar Hero III</div><div class="game-year">2007</div></div>
+    <div class="game-card"><div class="game-icon">&#x26BD;</div><div class="game-title">PES 6 / WE10</div><div class="game-year">2006</div></div>
   </div>
 </div>
 
+<div class="game-section">
+  <h3>&#x1F3AE; Xbox (2001-2008)</h3>
+  <span class="console-badge console-xbox">XBOX</span>
+  <span class="console-badge console-xbox">Pentium III 733MHz</span>
+  <p class="content-text" style="margin-top:8px;">El gigante negro de Microsoft entr&#xF3; fuerte. Disco duro interno (8-10GB), Xbox Live en 2002 revolucion&#xF3; el juego en l&#xED;nea en consolas. Halo era EL juego.</p>
+  <div class="game-list">
+    <div class="game-card"><div class="game-icon">&#x1F6C0;</div><div class="game-title">Halo 2</div><div class="game-year">2004</div></div>
+    <div class="game-card"><div class="game-icon">&#x1F920;</div><div class="game-title">Fable</div><div class="game-year">2004</div></div>
+    <div class="game-card"><div class="game-icon">&#x1F5E1;</div><div class="game-title">Ninja Gaiden</div><div class="game-year">2004</div></div>
+    <div class="game-card"><div class="game-icon">&#x1F916;</div><div class="game-title">Elder Scrolls III</div><div class="game-year">2002</div></div>
+  </div>
+</div>
+
+<div class="game-section">
+  <h3>&#x1F3AE; GameCube (2001-2007)</h3>
+  <span class="console-badge console-gc">GameCube</span>
+  <span class="console-badge console-gc">Mini-DVD</span>
+  <p class="content-text" style="margin-top:8px;">El cubo morado de Nintendo con discos MINI-DVD de 1.5GB. El control m&#xE1;s c&#xF3;modo jam&#xE1;s creado (bot&#xF3;n A gigante verde, B rojo chiquito).</p>
+  <div class="game-list">
+    <div class="game-card"><div class="game-icon">&#x1F3B4;</div><div class="game-title">Zelda Wind Waker</div><div class="game-year">2003</div></div>
+    <div class="game-card"><div class="game-icon">&#x1F3C1;</div><div class="game-title">Mario Kart DD</div><div class="game-year">2003</div></div>
+    <div class="game-card"><div class="game-icon">&#x1F916;</div><div class="game-title">Metroid Prime</div><div class="game-year">2002</div></div>
+    <div class="game-card"><div class="game-icon">&#x1F94A;</div><div class="game-title">Smash Melee</div><div class="game-year">2001</div></div>
+  </div>
+</div>
+
+<div class="game-section">
+  <h3>&#x1F3AE; Game Boy Advance (2001-2008)</h3>
+  <span class="console-badge console-gba">GBA</span>
+  <span class="console-badge console-gba">GBA SP</span>
+  <p class="content-text" style="margin-top:8px;">El Game Boy con luz al fin! El GBA SP (2003) tra&#xED;a pantalla iluminada y era plegable. Retrocompatible con Game Boy y Game Boy Color.</p>
+  <div class="game-list">
+    <div class="game-card"><div class="game-icon">&#x1F525;</div><div class="game-title">Pokemon Ruby/Sapp</div><div class="game-year">2003</div></div>
+    <div class="game-card"><div class="game-icon">&#x1F5E1;</div><div class="game-title">Golden Sun</div><div class="game-year">2001</div></div>
+    <div class="game-card"><div class="game-icon">&#x2B50;</div><div class="game-title">Superstar Saga</div><div class="game-year">2003</div></div>
+  </div>
+</div>
+
+<div class="rainbow-divider"><hr></div>
+
+<h2>&#x1F4BB; Juegos de PC Legendarios</h2>
+
+<div class="game-section">
+  <h3>&#x1F52B; Counter-Strike 1.6 (2003)</h3>
+  <span class="console-badge console-pc">PC</span>
+  <span class="console-badge console-pc">Half-Life Mod</span>
+  <p class="content-text" style="margin-top:8px;">EL juego de cyber. Mapas m&#xED;ticos: de_dust2, cs_assault, cs_office, fy_pool_day. El AWP era "el cuerno de chivo". "&#xA1;C&#xFA;breme!", "Nice shot", "OMG WALLHACK!". Servidores dedicados con mods: zombie plague, superhero, jailbreak, surf.</p>
+</div>
+
+<div class="game-section">
+  <h3>&#x2694;&#xFE0F; Ragnar&#xF6;k Online (2002)</h3>
+  <span class="console-badge console-pc">PC</span>
+  <span class="console-badge console-pc">MMORPG</span>
+  <p class="content-text" style="margin-top:8px;">El MMORPG que enganch&#xF3; a TODA Latinoam&#xE9;rica. Gr&#xE1;ficos 2D isom&#xE9;tricos, Porings, WoE (War of Emperium) los fines de semana. Prontera llena de merchants. "vendo +7 muffler[1] 8.5m pvp"</p>
+</div>
+
+<div class="game-section">
+  <h3>&#x1F4A3; Gunbound (2003)</h3>
+  <span class="console-badge console-pc">PC</span>
+  <span class="console-badge console-pc">Softnyx</span>
+  <p class="content-text" style="margin-top:8px;">Similar a Worms pero con veh&#xED;culos estilo anime. "Drag&#xF3;n", "Boomer", "Lightning", "Ice", "Mage". "pasame la formula del dragon pls" "ss = backshot" "gg wp"</p>
+</div>
+
+<div class="game-section">
+  <h3>&#x1F341; MapleStory (2003)</h3>
+  <span class="console-badge console-pc">PC</span>
+  <span class="console-badge console-pc">Nexon</span>
+  <p class="content-text" style="margin-top:8px;">MMORPG 2D lateral super cute. "J&gt;PQ" (jalo party quest). Henesys PQ, Kerning PQ, Ludibrium PQ. Los 4 jobs: Magician, Thief, Warrior, Bowman. FM (Free Market) lleno de tiendas.</p>
+</div>
+
+<div class="game-section">
+  <h3>&#x1F4A5; Half-Life 2 (2004)</h3>
+  <span class="console-badge console-pc">PC</span>
+  <span class="console-badge console-pc">Source Engine</span>
+  <p class="content-text" style="margin-top:8px;">Revolucion&#xF3; los FPS con f&#xED;sicas realistas (Havok). La Gravity Gun era lo m&#xE1;s revolucionario. "The right man in the wrong place". Esperamos Half-Life 3 hasta el d&#xED;a de hoy.</p>
+</div>
+
+<div class="highlight-box">
+  <p>&#x2728; &#xBF;Qu&#xE9; es un cybercaf&#xE9; sin estos cl&#xE1;sicos? &#x2728;<br>
+  &#x1F3AE; CS 1.6 &#x1F3AE; RO &#x1F3AE; Gunbound &#x1F3AE; MapleStory &#x1F3AE; Warcraft III &#x1F3AE;<br>
+  &#x1F3AE; Age of Empires II &#x1F3AE; Starcraft &#x1F3AE; MU Online &#x1F3AE; Tibia &#x1F3AE; Diablo II &#x1F3AE;</p>
+</div>
+
+</div>
+
+<script src="../js/layout.js"></script>
 <script src="../js/main.js"></script>
 <script src="../js/counter.js"></script>
 <script src="../js/music-player.js"></script>
-
 </body>
 </html>

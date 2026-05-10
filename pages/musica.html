@@ -6,279 +6,152 @@
 <title>~*~ M&#xFA;sica 2000s ~*~ Retro</title>
 <link rel="stylesheet" href="../css/style.css">
 <style>
-.year-section {
-  margin-bottom: 20px;
-}
-.year-title {
-  font-family: var(--font-pixel);
-  font-size: 12px;
-  color: var(--neon-pink);
-  text-shadow: 0 0 10px var(--neon-pink);
-  margin-bottom: 8px;
-  border-bottom: 2px dotted var(--neon-purple);
-  padding-bottom: 5px;
-}
-.song-list {
-  list-style: none;
-}
-.song-list li {
-  padding: 4px 0;
-  color: var(--neon-green);
-  font-size: 13px;
-  border-bottom: 1px solid rgba(0, 212, 255, 0.2);
-}
-.song-list li::before {
-  content: '&#x266A; ';
-  color: var(--neon-pink);
-}
-.genre-box {
-  border: 2px ridge var(--neon-blue);
-  background: rgba(0, 0, 0, 0.5);
-  padding: 12px;
-  margin: 10px 0;
-}
-.genre-box h4 {
-  font-family: var(--font-pixel);
-  font-size: 9px;
-  color: var(--neon-yellow);
-  text-shadow: 0 0 6px var(--neon-yellow);
-}
-.music-icon {
-  font-size: 24px;
-  float: left;
-  margin-right: 10px;
-}
+.genre-box { border: 2px ridge var(--neon-blue); background: rgba(0, 0, 0, 0.5); padding: 12px; margin: 10px 0; }
+.genre-box h4 { font-family: var(--font-pixel); font-size: 9px; color: var(--neon-yellow); text-shadow: 0 0 6px var(--neon-yellow); }
+.year-section { margin-bottom: 20px; }
+.year-title { font-family: var(--font-pixel); font-size: 12px; color: var(--neon-pink); text-shadow: 0 0 10px var(--neon-pink); margin-bottom: 8px; border-bottom: 2px dotted var(--neon-purple); padding-bottom: 5px; }
+.song-list { list-style: none; }
+.song-list li { padding: 4px 0; color: var(--neon-green); font-size: 13px; border-bottom: 1px solid rgba(0, 212, 255, 0.2); }
+.song-list li::before { content: '&#x266A; '; color: var(--neon-pink); }
 </style>
 </head>
 <body>
-
 <canvas id="starfield"></canvas>
 <canvas id="cursor-trail"></canvas>
 
-<div class="construction-bar blink-fast">
-  &#x1F6A7; SITIO EN CONSTRUCCI&#xD3;N PERMANENTE &#x1F6A7;
+<div id="page-content" data-page="musica" data-title="M&#xDA;SICA 2000s" data-subtitle="Cuando MTV pasaba m&uacute;sica y Napster era el rey">
+
+<div class="marquee-container">
+  <span class="marquee-text">
+    &#x266B; Pop &#x266A; Nu-Metal &#x266C; Reggaet&#xF3;n &#x266B; Hip-Hop &#x266A; Boy Bands &#x266C; Emo/Punk &#x266B; R&amp;B &#x266A; Electr&#xF3;nica &#x266C; &#xA1;La mejor &#xE9;poca musical de la historia! &#x266B;
+  </span>
 </div>
 
-<table id="main-table" cellpadding="0" cellspacing="0">
-  <tr>
-    <td colspan="2" id="header">
-      <h1>~*~ M&#xDA;SICA 2000s ~*~</h1>
-      <p style="color:var(--neon-blue);font-family:'Comic Sans MS',cursive;font-style:italic;font-size:14px;">
-        Cuando MTV pasaba m&#xFA;sica y Napster era el rey
-      </p>
-      <div class="sparkle-divider">&#x266B; &#x266A; &#x266C; &#x266B; &#x266A; &#x266C; &#x266B;</div>
-    </td>
-  </tr>
-  <tr>
-    <td id="nav">
-      <div class="nav-title">&#x25C9; NAVEGACI&#xD3;N</div>
-      <a href="../index.html" class="nav-link">Inicio</a>
-      <a href="musica.html" class="nav-link active">M&#xFA;sica</a>
-      <a href="tecnologia.html" class="nav-link">Tecnolog&#xED;a</a>
-      <a href="videojuegos.html" class="nav-link">Videojuegos</a>
-      <a href="internet.html" class="nav-link">Internet</a>
-      <a href="guestbook.html" class="nav-link">Guestbook</a>
-      <a href="galeria.html" class="nav-link">Galer&#xED;a</a>
-      <a href="quiz.html" class="nav-link">Quiz</a>
-      <div class="nav-counter">
-        <div class="nav-counter-title">Visitante #</div>
-        <div class="nav-counter-digits counter-digits">0000001</div>
-      </div>
-    </td>
-    <td id="content">
-      <div class="marquee-container">
-        <span class="marquee-text">
-          &#x266B; Pop &#x266A; Nu-Metal &#x266C; Reggaet&#xF3;n &#x266B; Hip-Hop &#x266A; Boy Bands &#x266C; Emo/Punk &#x266B; R&amp;B &#x266A; Electr&#xF3;nica &#x266C; &#xA1;La mejor &#xE9;poca musical de la historia! &#x266B;
-        </span>
-      </div>
+<h2>&#x1F3A7; G&#xE9;neros que dominaron la d&#xE9;cada</h2>
 
-      <h2>&#x1F3A7; G&#xE9;neros que dominaron la d&#xE9;cada</h2>
-
-      <div class="genre-box">
-        <h4>&#x1F451; Pop &amp; Boy Bands</h4>
-        <p class="content-text">
-          Britney Spears, *NSYNC y Backstreet Boys literalmente dominaban el mundo. Los Teen Choice
-          Awards mostraban qui&#xE9;n era el m&#xE1;s popular. TRL (Total Request Live) en MTV decid&#xED;a
-          qu&#xE9; videos eran los mejores. Todos quer&#xED;an bailar como Britney con el ombligo al aire.
-        </p>
-      </div>
-
-      <div class="genre-box">
-        <h4>&#x1F918; Nu-Metal &amp; Rock</h4>
-        <p class="content-text">
-          Linkin Park, Evanescence, Blink-182, Green Day, My Chemical Romance... La rebeli&#xF3;n
-          adolescente ten&#xED;a soundtrack. Usar mu&#xF1;equeras de picos, jeans rotos y delineador
-          negro era obligatorio. "In The End" sigue siendo un himno generacional.
-        </p>
-      </div>
-
-      <div class="genre-box">
-        <h4>&#x1F3A4; Reggaet&#xF3;n y M&#xFA;sica Latina</h4>
-        <p class="content-text">
-          Daddy Yankee, Don Omar, Wisin &amp; Yandel iniciaron el fen&#xF3;meno global del reggaet&#xF3;n.
-          Shakira dominaba con "Hips Don't Lie" y RBD era la banda pop m&#xE1;s grande de Am&#xE9;rica Latina.
-          Las fiestas no empezaban hasta que alguien pon&#xED;a "Gasolina".
-        </p>
-      </div>
-
-      <div class="genre-box">
-        <h4>&#x1F3A7; Hip-Hop &amp; R&amp;B</h4>
-        <p class="content-text">
-          Eminem revolucion&#xF3; el rap con letras crudas. 50 Cent era el rey con "In Da Club".
-          Beyonc&#xE9; empezaba su carrera solista. Jay-Z, Kanye West, Nelly, OutKast... La era
-          de las playeras XXL y las gorras planas.
-        </p>
-      </div>
-
-      <div class="rainbow-divider"><hr></div>
-
-      <h2>&#x1F4C5; Canciones TOP por a&#xF1;o</h2>
-
-      <div class="year-section">
-        <div class="year-title">&#x2B50; 2000</div>
-        <ul class="song-list">
-          <li>Britney Spears - Oops!... I Did It Again</li>
-          <li>*NSYNC - Bye Bye Bye</li>
-          <li>Santana ft. Rob Thomas - Smooth</li>
-          <li>Eminem - The Real Slim Shady</li>
-          <li>Blink 182 - All The Small Things</li>
-        </ul>
-      </div>
-
-      <div class="year-section">
-        <div class="year-title">&#x2B50; 2001</div>
-        <ul class="song-list">
-          <li>Shakira - Whenever, Wherever</li>
-          <li>Linkin Park - In The End</li>
-          <li>Alicia Keys - Fallin'</li>
-          <li>Destiny's Child - Survivor</li>
-          <li>System of a Down - Chop Suey!</li>
-        </ul>
-      </div>
-
-      <div class="year-section">
-        <div class="year-title">&#x2B50; 2002</div>
-        <ul class="song-list">
-          <li>Avril Lavigne - Complicated</li>
-          <li>Eminem - Lose Yourself</li>
-          <li>Nelly ft. Kelly Rowland - Dilemma</li>
-          <li>Nickelback - How You Remind Me</li>
-          <li>The Calling - Wherever You Will Go</li>
-        </ul>
-      </div>
-
-      <div class="year-section">
-        <div class="year-title">&#x2B50; 2003</div>
-        <ul class="song-list">
-          <li>Evanescence - Bring Me To Life</li>
-          <li>Beyonc&#xE9; ft. Jay-Z - Crazy In Love</li>
-          <li>50 Cent - In Da Club</li>
-          <li>OutKast - Hey Ya!</li>
-          <li>Coldplay - Clocks</li>
-        </ul>
-      </div>
-
-      <div class="year-section">
-        <div class="year-title">&#x2B50; 2004</div>
-        <ul class="song-list">
-          <li>Green Day - Boulevard of Broken Dreams</li>
-          <li>Daddy Yankee - Gasolina</li>
-          <li>Usher ft. Lil Jon - Yeah!</li>
-          <li>Maroon 5 - This Love</li>
-          <li>Hoobastank - The Reason</li>
-        </ul>
-      </div>
-
-      <div class="year-section">
-        <div class="year-title">&#x2B50; 2005</div>
-        <ul class="song-list">
-          <li>Shakira ft. Wyclef Jean - Hips Don't Lie</li>
-          <li>Gwen Stefani - Hollaback Girl</li>
-          <li>The Killers - Mr. Brightside</li>
-          <li>My Chemical Romance - Helena</li>
-          <li>RBD - S&#xF3;lo Qu&#xE9;date En Silencio</li>
-        </ul>
-      </div>
-
-      <div class="year-section">
-        <div class="year-title">&#x2B50; 2006</div>
-        <ul class="song-list">
-          <li>Justin Timberlake - SexyBack</li>
-          <li>Panic! At The Disco - I Write Sins Not Tragedies</li>
-          <li>Nelly Furtado - Promiscuous</li>
-          <li>Hinder - Lips of an Angel</li>
-          <li>Fall Out Boy - Dance, Dance</li>
-        </ul>
-      </div>
-
-      <div class="year-section">
-        <div class="year-title">&#x2B50; 2007</div>
-        <ul class="song-list">
-          <li>Rihanna ft. Jay-Z - Umbrella</li>
-          <li>Linkin Park - What I've Done</li>
-          <li>Amy Winehouse - Rehab</li>
-          <li>Paramore - Misery Business</li>
-          <li>Timbaland ft. OneRepublic - Apologize</li>
-        </ul>
-      </div>
-
-      <div class="highlight-box">
-        <p>&#x2728; DATO CURIOSO: &#xBF;Recuerdas quemar CDs con Nero Burning ROM? &#x2728;<br>
-        Pod&#xED;as meter hasta 18 canciones en un CD de 700MB a 128kbps.<br>
-        La emoci&#xF3;n de entregarle tu "mixtape" a tu crush &#x2764;&#xFE0F;</p>
-      </div>
-    </td>
-  </tr>
-  <tr>
-    <td colspan="2" id="footer">
-      <p class="footer-text">&#xA9; 2001-2009 Retro 2000s. Todos los derechos reservados.</p>
-      <div class="footer-credits">
-        <span>&#x2728; Hecho con Notepad</span>
-        <span>&#x2728; Pure HTML 4.01</span>
-        <span>&#x2728; CSS + JS Vanilla</span>
-      </div>
-      <p style="font-size:8px;color:var(--neon-blue);margin-top:8px;">
-        &#x1F310; Mejor visto en 800x600 | IE 5.0+ | Netscape Navigator
-      </p>
-    </td>
-  </tr>
-</table>
-
-<div id="music-player">
-  <div class="player-window">
-    <div class="player-titlebar">
-      <span>&#x266B; Winamp 2.91</span>
-      <span class="window-btn close">X</span>
-    </div>
-    <div class="player-body">
-      <div class="player-display">
-        <div class="player-title marquee">Complicated</div>
-        <div class="player-artist">Avril Lavigne</div>
-        <div class="player-progress">
-          <div class="player-progress-fill" style="width:0%"></div>
-        </div>
-        <div class="player-time">
-          <span class="player-current-time">0:00</span>
-          <span class="player-total-time">3:20</span>
-        </div>
-      </div>
-      <div class="player-controls">
-        <button class="player-btn player-btn-prev">&#x25C0;&#x25C0;</button>
-        <button class="player-btn player-btn-play">&#x25B6;</button>
-        <button class="player-btn player-btn-stop">&#x25A0;</button>
-        <button class="player-btn player-btn-next">&#x25B6;&#x25B6;</button>
-      </div>
-      <div class="player-volume">
-        <label>&#x1F50A;</label>
-        <input type="range" min="0" max="1" step="0.1" value="0.7">
-      </div>
-    </div>
-  </div>
+<div class="genre-box">
+  <h4>&#x1F451; Pop &amp; Boy Bands</h4>
+  <p class="content-text">Britney Spears, *NSYNC y Backstreet Boys literalmente dominaban el mundo. Los Teen Choice Awards mostraban qui&#xE9;n era el m&#xE1;s popular. TRL (Total Request Live) en MTV decid&#xED;a qu&#xE9; videos eran los mejores. Todos quer&#xED;an bailar como Britney con el ombligo al aire.</p>
 </div>
 
+<div class="genre-box">
+  <h4>&#x1F918; Nu-Metal &amp; Rock</h4>
+  <p class="content-text">Linkin Park, Evanescence, Blink-182, Green Day, My Chemical Romance... La rebeli&#xF3;n adolescente ten&#xED;a soundtrack. Usar mu&#xF1;equeras de picos, jeans rotos y delineador negro era obligatorio. "In The End" sigue siendo un himno generacional.</p>
+</div>
+
+<div class="genre-box">
+  <h4>&#x1F3A4; Reggaet&#xF3;n y M&#xFA;sica Latina</h4>
+  <p class="content-text">Daddy Yankee, Don Omar, Wisin &amp; Yandel iniciaron el fen&#xF3;meno global del reggaet&#xF3;n. Shakira dominaba con "Hips Don't Lie" y RBD era la banda pop m&#xE1;s grande de Am&#xE9;rica Latina. Las fiestas no empezaban hasta que alguien pon&#xED;a "Gasolina".</p>
+</div>
+
+<div class="genre-box">
+  <h4>&#x1F3A7; Hip-Hop &amp; R&amp;B</h4>
+  <p class="content-text">Eminem revolucion&#xF3; el rap con letras crudas. 50 Cent era el rey con "In Da Club". Beyonc&#xE9; empezaba su carrera solista. Jay-Z, Kanye West, Nelly, OutKast... La era de las playeras XXL y las gorras planas.</p>
+</div>
+
+<div class="rainbow-divider"><hr></div>
+
+<h2>&#x1F4C5; Canciones TOP por a&#xF1;o</h2>
+
+<div class="year-section">
+  <div class="year-title">&#x2B50; 2000</div>
+  <ul class="song-list">
+    <li>Britney Spears - Oops!... I Did It Again</li>
+    <li>*NSYNC - Bye Bye Bye</li>
+    <li>Santana ft. Rob Thomas - Smooth</li>
+    <li>Eminem - The Real Slim Shady</li>
+    <li>Blink 182 - All The Small Things</li>
+  </ul>
+</div>
+
+<div class="year-section">
+  <div class="year-title">&#x2B50; 2001</div>
+  <ul class="song-list">
+    <li>Shakira - Whenever, Wherever</li>
+    <li>Linkin Park - In The End</li>
+    <li>Alicia Keys - Fallin'</li>
+    <li>Destiny's Child - Survivor</li>
+    <li>System of a Down - Chop Suey!</li>
+  </ul>
+</div>
+
+<div class="year-section">
+  <div class="year-title">&#x2B50; 2002</div>
+  <ul class="song-list">
+    <li>Avril Lavigne - Complicated</li>
+    <li>Eminem - Lose Yourself</li>
+    <li>Nelly ft. Kelly Rowland - Dilemma</li>
+    <li>Nickelback - How You Remind Me</li>
+    <li>The Calling - Wherever You Will Go</li>
+  </ul>
+</div>
+
+<div class="year-section">
+  <div class="year-title">&#x2B50; 2003</div>
+  <ul class="song-list">
+    <li>Evanescence - Bring Me To Life</li>
+    <li>Beyonc&#xE9; ft. Jay-Z - Crazy In Love</li>
+    <li>50 Cent - In Da Club</li>
+    <li>OutKast - Hey Ya!</li>
+    <li>Coldplay - Clocks</li>
+  </ul>
+</div>
+
+<div class="year-section">
+  <div class="year-title">&#x2B50; 2004</div>
+  <ul class="song-list">
+    <li>Green Day - Boulevard of Broken Dreams</li>
+    <li>Daddy Yankee - Gasolina</li>
+    <li>Usher ft. Lil Jon - Yeah!</li>
+    <li>Maroon 5 - This Love</li>
+    <li>Hoobastank - The Reason</li>
+  </ul>
+</div>
+
+<div class="year-section">
+  <div class="year-title">&#x2B50; 2005</div>
+  <ul class="song-list">
+    <li>Shakira ft. Wyclef Jean - Hips Don't Lie</li>
+    <li>Gwen Stefani - Hollaback Girl</li>
+    <li>The Killers - Mr. Brightside</li>
+    <li>My Chemical Romance - Helena</li>
+    <li>RBD - S&#xF3;lo Qu&#xE9;date En Silencio</li>
+  </ul>
+</div>
+
+<div class="year-section">
+  <div class="year-title">&#x2B50; 2006</div>
+  <ul class="song-list">
+    <li>Justin Timberlake - SexyBack</li>
+    <li>Panic! At The Disco - I Write Sins Not Tragedies</li>
+    <li>Nelly Furtado - Promiscuous</li>
+    <li>Hinder - Lips of an Angel</li>
+    <li>Fall Out Boy - Dance, Dance</li>
+  </ul>
+</div>
+
+<div class="year-section">
+  <div class="year-title">&#x2B50; 2007</div>
+  <ul class="song-list">
+    <li>Rihanna ft. Jay-Z - Umbrella</li>
+    <li>Linkin Park - What I've Done</li>
+    <li>Amy Winehouse - Rehab</li>
+    <li>Paramore - Misery Business</li>
+    <li>Timbaland ft. OneRepublic - Apologize</li>
+  </ul>
+</div>
+
+<div class="highlight-box">
+  <p>&#x2728; DATO CURIOSO: &#xBF;Recuerdas quemar CDs con Nero Burning ROM? &#x2728;<br>
+  Pod&#xED;as meter hasta 18 canciones en un CD de 700MB a 128kbps.<br>
+  La emoci&#xF3;n de entregarle tu "mixtape" a tu crush &#x2764;&#xFE0F;</p>
+</div>
+
+</div>
+
+<script src="../js/layout.js"></script>
 <script src="../js/main.js"></script>
 <script src="../js/counter.js"></script>
 <script src="../js/music-player.js"></script>
-
 </body>
 </html>

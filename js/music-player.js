@@ -20,10 +20,31 @@ document.addEventListener('DOMContentLoaded', function() {
   let progressInterval;
   let progress = 0;
   let volume = 0.7;
-
-  const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+  let audioCtx = null;
   let oscillator = null;
   let gainNode = null;
+
+  function getAudioCtx() {
+    if (!audioCtx) {
+      audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+    }
+    return audioCtx;
+  }
+
+  const notes = [262, 294, 330, 349, 392, 440, 494, 523];
+  const melodies = [
+    [0, 2, 4, 5, 7, 5, 4, 2],
+    [0, 3, 5, 7, 8, 7, 5, 3],
+    [0, 2, 3, 5, 7, 3, 0, -1],
+    [4, 4, 5, 7, 5, 4, 2, 0],
+    [0, 0, 7, 5, 7, 5, 4, 2],
+    [2, 4, 5, 7, 5, 4, 5, 2],
+    [0, 1, 3, 5, 3, 1, 0, -1],
+    [5, 5, 4, 2, 4, 5, 4, 2],
+    [0, 7, 5, 4, 5, 7, 0, 7],
+    [0, 2, 4, 7, 4, 2, 0, -1]
+  ];
+  let noteInterval = null;
 
   function formatTime(seconds) {
     const m = Math.floor(seconds / 60);
@@ -33,37 +54,40 @@ document.addEventListener('DOMContentLoaded', function() {
 
   function startTone() {
     if (oscillator) return;
-    oscillator = audioCtx.createOscillator();
-    gainNode = audioCtx.createGain();
+    const ctx = getAudioCtx();
+    oscillator = ctx.createOscillator();
+    gainNode = ctx.createGain();
 
-    const notes = [262, 294, 330, 349, 392, 440, 494, 523];
-    const melody = [0, 2, 4, 5, 7, 5, 4, 2, 0, 2, 4, 5, 4, 2, 0, -1];
-
+    const melody = melodies[currentTrack % melodies.length];
     let noteIndex = 0;
+
     oscillator.type = 'square';
-    oscillator.frequency.setValueAtTime(notes[melody[0]] || 262, audioCtx.currentTime);
-    gainNode.gain.setValueAtTime(volume * 0.15, audioCtx.currentTime);
+    oscillator.frequency.setValueAtTime(notes[melody[0] < 0 ? 0 : melody[0]] || 262, ctx.currentTime);
+    gainNode.gain.setValueAtTime(volume * 0.15, ctx.currentTime);
 
     oscillator.connect(gainNode);
-    gainNode.connect(audioCtx.destination);
+    gainNode.connect(ctx.destination);
     oscillator.start();
 
-    const noteInterval = setInterval(() => {
+    if (ctx.state === 'suspended') ctx.resume();
+
+    noteInterval = setInterval(() => {
       if (!isPlaying) {
         clearInterval(noteInterval);
         return;
       }
       noteIndex = (noteIndex + 1) % melody.length;
-      const freq = notes[melody[noteIndex]] || 262;
-      oscillator.frequency.setValueAtTime(freq, audioCtx.currentTime);
+      const freq = notes[melody[noteIndex < 0 ? 0 : noteIndex]] || 262;
+      oscillator.frequency.setValueAtTime(freq, ctx.currentTime);
     }, 250);
-
-    oscillator._noteInterval = noteInterval;
   }
 
   function stopTone() {
+    if (noteInterval) {
+      clearInterval(noteInterval);
+      noteInterval = null;
+    }
     if (oscillator) {
-      if (oscillator._noteInterval) clearInterval(oscillator._noteInterval);
       try {
         oscillator.stop();
         oscillator.disconnect();
@@ -112,12 +136,20 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
   function nextTrack() {
+    if (isPlaying) {
+      stopTone();
+      startTone();
+    }
     currentTrack = (currentTrack + 1) % playlist.length;
     progress = 0;
     updateDisplay();
   }
 
   function prevTrack() {
+    if (isPlaying) {
+      stopTone();
+      startTone();
+    }
     currentTrack = (currentTrack - 1 + playlist.length) % playlist.length;
     progress = 0;
     updateDisplay();
@@ -131,7 +163,6 @@ document.addEventListener('DOMContentLoaded', function() {
       if (playBtn) playBtn.innerHTML = '&#x275A;&#x275A;';
       startTone();
       startProgress();
-      if (audioCtx.state === 'suspended') audioCtx.resume();
     } else {
       if (playBtn) playBtn.innerHTML = '&#x25B6;';
       stopTone();
@@ -161,7 +192,7 @@ document.addEventListener('DOMContentLoaded', function() {
   if (volumeSlider) {
     volumeSlider.addEventListener('input', function() {
       volume = parseFloat(this.value);
-      if (gainNode) {
+      if (gainNode && audioCtx) {
         gainNode.gain.setValueAtTime(volume * 0.15, audioCtx.currentTime);
       }
     });

@@ -4,61 +4,20 @@ document.addEventListener('DOMContentLoaded', function() {
   const quizForm = document.getElementById('quiz-form');
   const quizQuestions = document.getElementById('quiz-questions');
   const quizSubmit = document.getElementById('quiz-submit');
-  const quizRestart = document.getElementById('quiz-restart');
 
   if (!quizContainer || !quizForm || !quizQuestions) return;
 
   const questions = [
-    {
-      question: '¿En qué año se lanzó el primer iPhone?',
-      options: ['2005', '2006', '2007', '2008'],
-      answer: 2
-    },
-    {
-      question: '¿Cómo se llamaba el asistente virtual de Office en los 2000?',
-      options: ['Clippy', 'Cortana', 'Bob', 'Siri'],
-      answer: 0
-    },
-    {
-      question: '¿Qué consola fue la rival directa del PlayStation 2?',
-      options: ['Dreamcast', 'Xbox', 'GameCube', 'Nintendo 64'],
-      answer: 1
-    },
-    {
-      question: '¿En qué red social podías subir 1 foto al día?',
-      options: ['MySpace', 'Facebook', 'Fotolog', 'Hi5'],
-      answer: 2
-    },
-    {
-      question: '¿Qué mensaje mostraba MSN Messenger cuando estabas ausente?',
-      options: ['Fuera de línea', 'Ausente', 'No disponible', 'Inactivo'],
-      answer: 1
-    },
-    {
-      question: '¿Cómo se llamaba la mascota virtual más famosa de los 2000?',
-      options: ['Pou', 'Tamagotchi', 'Furby', 'Nintendogs'],
-      answer: 1
-    },
-    {
-      question: '¿Qué programa se usaba para bajar música con conexiones P2P?',
-      options: ['iTunes', 'Spotify', 'Winamp', 'Ares / LimeWire'],
-      answer: 3
-    },
-    {
-      question: '¿Cual fue el videojuego más jugado en cybercafés?',
-      options: ['World of Warcraft', 'Counter-Strike 1.6', 'Minecraft', 'League of Legends'],
-      answer: 1
-    },
-    {
-      question: '¿Qué celular era conocido como "irrompible"?',
-      options: ['Motorola RAZR', 'Nokia 3310', 'Sony Ericsson W200', 'BlackBerry'],
-      answer: 1
-    },
-    {
-      question: '¿Qué significaba "xD" en el Messenger?',
-      options: ['Cara de risa', 'Tristeza', 'Corazón', 'Enojo'],
-      answer: 0
-    }
+    { question: '¿En qué año se lanzó el primer iPhone?', options: ['2005', '2006', '2007', '2008'], answer: 2 },
+    { question: '¿Cómo se llamaba el asistente virtual de Office en los 2000?', options: ['Clippy', 'Cortana', 'Bob', 'Siri'], answer: 0 },
+    { question: '¿Qué consola fue la rival directa del PlayStation 2?', options: ['Dreamcast', 'Xbox', 'GameCube', 'Nintendo 64'], answer: 1 },
+    { question: '¿En qué red social podías subir 1 foto al día?', options: ['MySpace', 'Facebook', 'Fotolog', 'Hi5'], answer: 2 },
+    { question: '¿Qué mensaje mostraba MSN Messenger cuando estabas ausente?', options: ['Fuera de línea', 'Ausente', 'No disponible', 'Inactivo'], answer: 1 },
+    { question: '¿Cómo se llamaba la mascota virtual más famosa de los 2000?', options: ['Pou', 'Tamagotchi', 'Furby', 'Nintendogs'], answer: 1 },
+    { question: '¿Qué programa se usaba para bajar música con conexiones P2P?', options: ['iTunes', 'Spotify', 'Winamp', 'Ares / LimeWire'], answer: 3 },
+    { question: '¿Cual fue el videojuego más jugado en cybercafés?', options: ['World of Warcraft', 'Counter-Strike 1.6', 'Minecraft', 'League of Legends'], answer: 1 },
+    { question: '¿Qué celular era conocido como "irrompible"?', options: ['Motorola RAZR', 'Nokia 3310', 'Sony Ericsson W200', 'BlackBerry'], answer: 1 },
+    { question: '¿Qué significaba "xD" en el Messenger?', options: ['Cara de risa', 'Tristeza', 'Corazón', 'Enojo'], answer: 0 }
   ];
 
   function buildQuiz() {
@@ -66,11 +25,12 @@ document.addEventListener('DOMContentLoaded', function() {
     questions.forEach((q, qi) => {
       const div = document.createElement('div');
       div.className = 'quiz-question';
+      div.id = 'question-' + qi;
 
       let html = `<h3>${qi + 1}. ${q.question}</h3>`;
       q.options.forEach((opt, oi) => {
         html += `
-          <label class="quiz-option">
+          <label class="quiz-option" data-qi="${qi}" data-oi="${oi}">
             <input type="radio" name="q${qi}" value="${oi}" style="display:none;">
             ${String.fromCharCode(65 + oi)}) ${opt}
           </label>
@@ -97,10 +57,24 @@ document.addEventListener('DOMContentLoaded', function() {
 
     questions.forEach((q, qi) => {
       const selected = document.querySelector(`input[name="q${qi}"]:checked`);
-      if (selected) {
-        if (parseInt(selected.value) === q.answer) {
-          score++;
+      const questionDiv = document.getElementById('question-' + qi);
+      const options = questionDiv.querySelectorAll('.quiz-option');
+
+      options.forEach((opt, oi) => {
+        opt.style.pointerEvents = 'none';
+        if (oi === q.answer) {
+          opt.style.border = '2px solid var(--neon-green)';
+          opt.style.background = 'rgba(57, 255, 20, 0.15)';
+          opt.style.color = 'var(--neon-green)';
+        } else if (selected && parseInt(selected.value) === oi) {
+          opt.style.border = '2px solid var(--neon-red)';
+          opt.style.background = 'rgba(255, 0, 0, 0.15)';
+          opt.style.color = 'var(--neon-red)';
         }
+      });
+
+      if (selected) {
+        if (parseInt(selected.value) === q.answer) score++;
       } else {
         answeredAll = false;
       }
@@ -108,8 +82,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
     if (!answeredAll) {
       alert('Responde todas las preguntas antes de enviar!');
+      quizSubmit.style.display = '';
       return;
     }
+
+    quizSubmit.style.display = 'none';
 
     const percentage = Math.round((score / questions.length) * 100);
     let rank, rankColor;
@@ -141,25 +118,19 @@ document.addEventListener('DOMContentLoaded', function() {
         <p style="color: var(--neon-green); margin-top: 15px;">
           Correctas: ${percentage}%
         </p>
+        <p style="color: var(--neon-blue); font-size: 11px; margin-top: 5px;">
+          &#x1F4D6; Verde = correcta | Rojo = tu respuesta (si es incorrecta)
+        </p>
         <button class="retro-btn" onclick="location.reload()" style="margin-top:20px;">
           &#x1F504; Intentar de nuevo
         </button>
       </div>
     `;
 
-    quizForm.style.display = 'none';
     quizResult.style.display = 'block';
-
-    document.querySelectorAll('.quiz-question').forEach(q => {
-      q.style.display = 'none';
-    });
-    quizSubmit.style.display = 'none';
   }
 
-  quizForm.addEventListener('submit', function(e) {
-    e.preventDefault();
-  });
-
+  quizForm.addEventListener('submit', function(e) { e.preventDefault(); });
   quizSubmit.addEventListener('click', showResult);
 
   buildQuiz();
