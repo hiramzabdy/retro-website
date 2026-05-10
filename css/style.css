@@ -111,18 +111,57 @@ body {
 
 /* ===== RESPONSIVE ===== */
 @media (max-width: 820px) {
-  #main-table { width: 100%; }
-  #nav { width: 100%; border-right: none; border-bottom: 3px ridge var(--neon-blue); }
+  #main-table, #main-table tbody, #main-table tr, #main-table td {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  #nav {
+    border-right: none;
+    border-bottom: 3px ridge var(--neon-blue);
+  }
   #content { padding: 10px; }
+  .construction-bar { width: 100%; }
   .card { flex: 1 1 100%; }
-  #music-player { width: 280px; right: 5px; }
+  #music-player { width: 280px; right: 5px; bottom: 5px; }
+  .footer-credits { gap: 10px; }
 }
-@media (max-width: 480px) {
-  h1 { font-size: 14px; }
+
+@media (max-width: 600px) {
+  h1 { font-size: 15px; }
   h2 { font-size: 11px; }
+  .counter-digits { font-size: 26px; }
+  .gif-card { width: 45%; }
+  .game-card { flex: 1 1 100%; }
+  .window-body { padding: 8px; }
+  .nav-link { padding: 10px 8px; font-size: 9px; }
+  .marquee-text { animation-duration: 25s; }
   #music-player { width: 240px; }
-  .counter-digits { font-size: 24px; }
-  .badges { justify-content: center; }
+  .quiz-option { font-size: 9px; padding: 10px; }
+}
+
+@media (max-width: 480px) {
+  h1 { font-size: 13px; }
+  h2 { font-size: 10px; }
+  #music-player { width: 200px; right: 3px; bottom: 3px; }
+  .counter-digits { font-size: 20px; padding: 3px 10px; }
+  .badges { gap: 4px; }
+  .badge { width: 72px; height: 26px; font-size: 6px; }
+  .footer-credits { flex-direction: column; gap: 3px; align-items: center; }
+  .construction-bar { font-size: 6px; padding: 3px; }
+  .guestbook-form input,
+  .guestbook-form textarea { font-size: 16px; }
+}
+
+@media (max-width: 360px) {
+  h1 { font-size: 11px; }
+  h2 { font-size: 9px; }
+  .nav-link { padding: 12px 8px; font-size: 8px; }
+  .marquee-text { animation-duration: 30s; font-size: 9px; }
+  .gif-card { width: 100%; }
+  .specs-table td:first-child { font-size: 7px; }
+  .content-text { font-size: 12px; }
+  .quiz-option { font-size: 8px; padding: 12px 8px; }
 }
 
 /* ===== MARQUEE ===== */
