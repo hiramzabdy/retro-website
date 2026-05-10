@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>~*~ Libro de Visitas ~*~ Retro 2000s</title>
+<link rel="stylesheet" href="../css/style.css">
+<style>
+.guestbook-intro {
+  text-align: center;
+  margin-bottom: 20px;
+  padding: 10px;
+  background: rgba(255, 110, 199, 0.1);
+  border: 2px dotted var(--neon-pink);
+}
+.guestbook-intro p {
+  color: var(--neon-green);
+  font-size: 14px;
+  line-height: 1.6;
+}
+.emoticon-guide {
+  font-size: 10px;
+  color: var(--neon-blue);
+  margin-top: 10px;
+  padding: 8px;
+  background: rgba(0, 0, 0, 0.4);
+  border: 1px dashed var(--neon-blue);
+  display: inline-block;
+}
+.form-row {
+  margin-bottom: 8px;
+}
+</style>
+</head>
+<body>
+
+<canvas id="starfield"></canvas>
+<canvas id="cursor-trail"></canvas>
+
+<div class="construction-bar blink-fast">
+  &#x1F6A7; SITIO EN CONSTRUCCI&#xD3;N PERMANENTE &#x1F6A7;
+</div>
+
+<table id="main-table" cellpadding="0" cellspacing="0">
+  <tr>
+    <td colspan="2" id="header">
+      <h1>~*~ FIRMA MI GUESTBOOK ~*~</h1>
+      <p style="color:var(--neon-blue);font-family:'Comic Sans MS',cursive;font-style:italic;font-size:14px;">
+        Deja tu huella en el ciberespacio!
+      </p>
+      <div class="sparkle-divider">&#x270D;&#xFE0F; &#x1F4AC; &#x270D;&#xFE0F; &#x1F4AC; &#x270D;&#xFE0F; &#x1F4AC; &#x270D;&#xFE0F;</div>
+    </td>
+  </tr>
+  <tr>
+    <td id="nav">
+      <div class="nav-title">&#x25C9; NAVEGACI&#xD3;N</div>
+      <a href="../index.html" class="nav-link">Inicio</a>
+      <a href="musica.html" class="nav-link">M&#xFA;sica</a>
+      <a href="tecnologia.html" class="nav-link">Tecnolog&#xED;a</a>
+      <a href="videojuegos.html" class="nav-link">Videojuegos</a>
+      <a href="internet.html" class="nav-link">Internet</a>
+      <a href="guestbook.html" class="nav-link active">Guestbook</a>
+      <a href="galeria.html" class="nav-link">Galer&#xED;a</a>
+      <a href="quiz.html" class="nav-link">Quiz</a>
+      <div class="nav-counter">
+        <div class="nav-counter-title">Visitante #</div>
+        <div class="nav-counter-digits counter-digits">0000001</div>
+      </div>
+    </td>
+    <td id="content">
+      <div class="guestbook-intro">
+        <p>
+          &#x2728; &#xA1;Bienvenido al libro de visitas m&#xE1;s retro del internet! &#x2728;<br>
+          Deja tu mensaje como en los viejos tiempos del 2000.<br>
+          Recuerda usar emoticones cl&#xE1;sicos :) :D :P xD :O &lt;3
+        </p>
+        <div class="emoticon-guide">
+          <strong>Gu&#xED;a de Emoticones:</strong> :) = feliz | :D = risa | :P = sacando lengua | xD = carcajada | :O = sorprendido | &lt;3 = coraz&#xF3;n
+        </div>
+      </div>
+
+      <div class="rainbow-divider"><hr></div>
+
+      <div class="window-box">
+        <div class="window-title">
+          <span>&#x270D;&#xFE0F; Firmar Guestbook</span>
+          <div class="window-buttons">
+            <span class="window-btn minimize">_</span>
+            <span class="window-btn maximize">&#x25A1;</span>
+            <span class="window-btn close">X</span>
+          </div>
+        </div>
+        <div class="window-body">
+          <form id="guestbook-form" class="guestbook-form">
+            <div class="form-row">
+              <label for="gb-name">&#x1F464; Tu Nombre / Nick:</label>
+              <input type="text" id="gb-name" placeholder="xXx_~TuNick~_xXx" required maxlength="40">
+            </div>
+            <div class="form-row">
+              <label for="gb-message">&#x1F4AC; Tu Mensaje:</label>
+              <textarea id="gb-message" placeholder="Hola! pasaba a firmar tu guestbook... est&#xE1; muy padre tu sitio! :)" required maxlength="500"></textarea>
+            </div>
+            <div style="text-align: center; margin-top: 10px;">
+              <button type="submit" class="retro-btn">&#x2728; Firmar Guestbook &#x2728;</button>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <div class="rainbow-divider"><hr></div>
+
+      <h2>&#x1F4AC; Firmas Recientes</h2>
+      <div id="guestbook-entries"></div>
+
+      <div class="guestbook-divider">&#x2728; &#x2022; &#x2730; &#x2022; &#x2728; FIN DE LAS FIRMAS &#x2728; &#x2022; &#x2730; &#x2022; &#x2728;</div>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2" id="footer">
+      <p class="footer-text">&#xA9; 2001-2009 Retro 2000s. Todos los derechos reservados.</p>
+      <div class="footer-credits">
+        <span>&#x2728; Hecho con Notepad</span>
+        <span>&#x2728; Pure HTML 4.01</span>
+        <span>&#x2728; CSS + JS Vanilla</span>
+      </div>
+    </td>
+  </tr>
+</table>
+
+<div id="music-player">
+  <div class="player-window">
+    <div class="player-titlebar">
+      <span>&#x266B; Winamp 2.91</span>
+      <span class="window-btn close">X</span>
+    </div>
+    <div class="player-body">
+      <div class="player-display">
+        <div class="player-title marquee">Complicated</div>
+        <div class="player-artist">Avril Lavigne</div>
+        <div class="player-progress">
+          <div class="player-progress-fill" style="width:0%"></div>
+        </div>
+        <div class="player-time">
+          <span class="player-current-time">0:00</span>
+          <span class="player-total-time">3:20</span>
+        </div>
+      </div>
+      <div class="player-controls">
+        <button class="player-btn player-btn-prev">&#x25C0;&#x25C0;</button>
+        <button class="player-btn player-btn-play">&#x25B6;</button>
+        <button class="player-btn player-btn-stop">&#x25A0;</button>
+        <button class="player-btn player-btn-next">&#x25B6;&#x25B6;</button>
+      </div>
+      <div class="player-volume">
+        <label>&#x1F50A;</label>
+        <input type="range" min="0" max="1" step="0.1" value="0.7">
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="../js/main.js"></script>
+<script src="../js/counter.js"></script>
+<script src="../js/guestbook.js"></script>
+<script src="../js/music-player.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>~*~ Tecnolog&#xED;a 2000s ~*~ Retro</title>
+<link rel="stylesheet" href="../css/style.css">
+<style>
+.tech-item {
+  border: 2px ridge var(--neon-green);
+  background: rgba(0, 0, 0, 0.5);
+  padding: 12px;
+  margin: 10px 0;
+  overflow: hidden;
+}
+.tech-item h4 {
+  font-family: var(--font-pixel);
+  font-size: 10px;
+  color: var(--neon-green);
+  text-shadow: 0 0 8px var(--neon-green);
+  margin-bottom: 6px;
+}
+.tech-item p {
+  color: var(--neon-green);
+  line-height: 1.5;
+  font-size: 13px;
+}
+.tech-icon {
+  font-size: 40px;
+  float: left;
+  margin-right: 12px;
+  min-width: 40px;
+  text-align: center;
+}
+.specs-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 10px 0;
+  font-size: 12px;
+}
+.specs-table td {
+  padding: 4px 8px;
+  border: 1px solid var(--neon-blue);
+  color: var(--neon-green);
+}
+.specs-table td:first-child {
+  color: var(--neon-yellow);
+  font-family: var(--font-pixel);
+  font-size: 8px;
+  width: 40%;
+}
+</style>
+</head>
+<body>
+
+<canvas id="starfield"></canvas>
+<canvas id="cursor-trail"></canvas>
+
+<div class="construction-bar blink-fast">
+  &#x1F6A7; SITIO EN CONSTRUCCI&#xD3;N PERMANENTE &#x1F6A7;
+</div>
+
+<table id="main-table" cellpadding="0" cellspacing="0">
+  <tr>
+    <td colspan="2" id="header">
+      <h1>~*~ TECNOLOG&#xCD;A 2000s ~*~</h1>
+      <p style="color:var(--neon-blue);font-family:'Comic Sans MS',cursive;font-style:italic;font-size:14px;">
+        Cuando 256MB de RAM era ciencia ficci&#xF3;n
+      </p>
+      <div class="sparkle-divider">&#x1F4F1; &#x1F4BB; &#x1F4F7; &#x1F4F1; &#x1F4BB; &#x1F4F7; &#x1F4F1;</div>
+    </td>
+  </tr>
+  <tr>
+    <td id="nav">
+      <div class="nav-title">&#x25C9; NAVEGACI&#xD3;N</div>
+      <a href="../index.html" class="nav-link">Inicio</a>
+      <a href="musica.html" class="nav-link">M&#xFA;sica</a>
+      <a href="tecnologia.html" class="nav-link active">Tecnolog&#xED;a</a>
+      <a href="videojuegos.html" class="nav-link">Videojuegos</a>
+      <a href="internet.html" class="nav-link">Internet</a>
+      <a href="guestbook.html" class="nav-link">Guestbook</a>
+      <a href="galeria.html" class="nav-link">Galer&#xED;a</a>
+      <a href="quiz.html" class="nav-link">Quiz</a>
+      <div class="nav-counter">
+        <div class="nav-counter-title">Visitante #</div>
+        <div class="nav-counter-digits counter-digits">0000001</div>
+      </div>
+    </td>
+    <td id="content">
+      <div class="marquee-container">
+        <span class="marquee-text">
+          &#x1F4F1; Nokia 3310 &#x1F4BB; Windows XP &#x1F4F7; C&#xE1;maras digitales 2MP &#x1F4F1; Pentium 4 &#x1F4BB; 64MB RAM &#x1F4F7; iPod Classic &#x1F4F1; Motorola RAZR &#x1F4BB; Dial-Up 56k &#x2728;
+        </span>
+      </div>
+
+      <h2>&#x1F4F1; Celulares que marcaron &#xE9;poca</h2>
+
+      <div class="tech-item">
+        <div class="tech-icon">&#x1F4F1;</div>
+        <h4>Nokia 3310 (2000)</h4>
+        <p>
+          El legendario "irrompible". Con su pantalla monocrom&#xE1;tica de 84x48 p&#xED;xeles,
+          Snake II preinstalado, y carcasas intercambiables (Hello Kitty, tribal, flamas).
+          La bater&#xED;a duraba una semana. Sobreviv&#xED;a ca&#xED;das, agua y enojos adolescentes.
+        </p>
+        <table class="specs-table">
+          <tr><td>Pantalla</td><td>84x48 px, monocrom&#xE1;tica</td></tr>
+          <tr><td>Peso</td><td>133 gramos (arma mortal)</td></tr>
+          <tr><td>Bater&#xED;a</td><td>55h en espera, 260h apagado!</td></tr>
+          <tr><td>Juego</td><td>Snake II, Space Impact</td></tr>
+          <tr><td>Precio</td><td>~$2000 MXN en Telcel</td></tr>
+        </table>
+      </div>
+
+      <div class="tech-item">
+        <div class="tech-icon">&#x1F4F1;</div>
+        <h4>Motorola RAZR V3 (2004)</h4>
+        <p>
+          EL celular fashion. Ultradelgado (13.9mm), acabado met&#xE1;lico, teclado electroluminiscente.
+          Era el tel&#xE9;fono que todos quer&#xED;an tener. Costaba m&#xE1;s de $500 USD.
+          "Hello Moto" en tono polif&#xF3;nico (luego MP3!). C&#xE1;mara VGA de 0.3MP.
+        </p>
+      </div>
+
+      <div class="tech-item">
+        <div class="tech-icon">&#x1F4F1;</div>
+        <h4>Sidekick / Hiptop (2002)</h4>
+        <p>
+          La pantalla giraba 180&#xB0; revelando un teclado QWERTY. Era el celular de T-Mobile
+          que usaban las celebridades (Paris Hilton, Lindsay Lohan). Mensajer&#xED;a instant&#xE1;nea,
+          AIM (AOL Instant Messenger) y navegador WAP. La red social definitiva antes de los smartphones.
+        </p>
+      </div>
+
+      <div class="rainbow-divider"><hr></div>
+
+      <h2>&#x1F4BB; Computadoras e&#xE9;picas</h2>
+
+      <div class="tech-item">
+        <div class="tech-icon">&#x1F4BB;</div>
+        <h4>Windows XP (2001-2014)</h4>
+        <p>
+          El sistema operativo m&#xE1;s longevo de Microsoft. Fondo verde "Bliss", barra de tareas
+          azul met&#xE1;lica, men&#xFA; inicio con dos columnas. Solitario Spider, Pinball Space Cadet
+          y Paint (el original). Service Pack 2 cambió todo con el firewall. 
+          Era obligatorio desfragmentar el disco cada mes.
+        </p>
+        <table class="specs-table">
+          <tr><td>RAM m&#xED;nima</td><td>64 MB (recomendada 128 MB)</td></tr>
+          <tr><td>Disco</td><td>1.5 GB libres (&iexcl;Qu&eacute; lujo!)</td></tr>
+          <tr><td>Procesador</td><td>Pentium 233 MHz o superior</td></tr>
+          <tr><td>Gr&#xE1;ficos</td><td>800x600 con 256 colores</td></tr>
+        </table>
+      </div>
+
+      <div class="tech-item">
+        <div class="tech-icon">&#x1F4BB;</div>
+        <h4>Internet por Dial-Up (56k)</h4>
+        <p>
+          Ese sonido inconfundible: Pshhhhkkkkkkrrrr... kaking... kaking... ding ding ding...
+          Conectarte a internet era una odisea de 2 minutos. Telmex Infinitum (luego Prodigy)
+          ofrec&#xED;an paquetes de 20, 50 y 100 horas. A $1 peso el minuto en horario diurno.
+          Bajar una canci&#xF3;n en MP3 (3.5MB) tomaba 15-20 minutos.
+          "&#xA1;Cuelga el tel&#xE9;fono que me desconectas!"
+        </p>
+      </div>
+
+      <div class="tech-item">
+        <div class="tech-icon">&#x1F4BB;</div>
+        <h4>Cabinas de Internet / Cibercaf&#xE9;s</h4>
+        <p>
+          Antes de que todos tuvieran internet en casa, ibas al cyber. $8-15 pesos la hora
+          (y $5 si era promoci&#xF3;n). Las PCs con Pentium 4, Windows XP, Counter-Strike 1.6,
+          MSN Messenger abierto. Mouse de bolita (hab&#xED;a que limpiarlo seguido). 
+          Aud&#xED;fonos con almohadillas rotas. El olor caracter&#xED;stico a encierro, 
+          comida chatarra y calor de computadoras. Prohibido abrir p&#xE1;ginas "no aptas".
+        </p>
+      </div>
+
+      <div class="rainbow-divider"><hr></div>
+
+      <h2>&#x1F4F7; Gadgets y accesorios</h2>
+
+      <div class="card-grid">
+        <div class="card">
+          <h4>&#x1F4F7; iPod Classic (2001)</h4>
+          <p>Rueda t&#xE1;ctil (click wheel), disco duro de 5-160GB, pantalla monocrom&#xE1;tica. "1000 canciones en tu bolsillo". EarPods blancos icónicos.</p>
+        </div>
+        <div class="card">
+          <h4>&#x1F4F7; C&#xE1;maras digitales</h4>
+          <p>Sony Cyber-shot, Canon PowerShot. 2-5 megapixeles era lo m&#xE1;ximo. Memory Stick de 128MB guardaba ~50 fotos. Revelado en Kodak/Walmart.</p>
+        </div>
+        <div class="card">
+          <h4>&#x1F4F7; Palm Pilot / PDA</h4>
+          <p>Organizador personal con stylus. Solo jefes y ejecutivos lo usaban. Sincronizabas con Outlook por cable serial. Muy fancy.</p>
+        </div>
+        <div class="card">
+          <h4>&#x1F4F7; Memory Card / USB</h4>
+          <p>USB de 128MB era un lujo. "Me prestas tu USB?" era frase com&#xFA;n. Las memory cards de PS2 (8MB) guardaban partidas de 4KB cada una.</p>
+        </div>
+      </div>
+
+      <div class="highlight-box" style="margin-top:15px;">
+        <p>&#x2728; DATO CURIOSO: &#xBF;Recuerdas los CDs de AOL? &#x2728;<br>
+        Llegaban por correo GRATIS. 1000 horas de internet gratis.<br>
+        Los us&#xE1;bamos como posavasos o espejos improvisados xD</p>
+      </div>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2" id="footer">
+      <p class="footer-text">&#xA9; 2001-2009 Retro 2000s. Todos los derechos reservados.</p>
+      <div class="footer-credits">
+        <span>&#x2728; Hecho con Notepad</span>
+        <span>&#x2728; Pure HTML 4.01</span>
+        <span>&#x2728; CSS + JS Vanilla</span>
+      </div>
+    </td>
+  </tr>
+</table>
+
+<div id="music-player">
+  <div class="player-window">
+    <div class="player-titlebar">
+      <span>&#x266B; Winamp 2.91</span>
+      <span class="window-btn close">X</span>
+    </div>
+    <div class="player-body">
+      <div class="player-display">
+        <div class="player-title marquee">Complicated</div>
+        <div class="player-artist">Avril Lavigne</div>
+        <div class="player-progress">
+          <div class="player-progress-fill" style="width:0%"></div>
+        </div>
+        <div class="player-time">
+          <span class="player-current-time">0:00</span>
+          <span class="player-total-time">3:20</span>
+        </div>
+      </div>
+      <div class="player-controls">
+        <button class="player-btn player-btn-prev">&#x25C0;&#x25C0;</button>
+        <button class="player-btn player-btn-play">&#x25B6;</button>
+        <button class="player-btn player-btn-stop">&#x25A0;</button>
+        <button class="player-btn player-btn-next">&#x25B6;&#x25B6;</button>
+      </div>
+      <div class="player-volume">
+        <label>&#x1F50A;</label>
+        <input type="range" min="0" max="1" step="0.1" value="0.7">
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="../js/main.js"></script>
+<script src="../js/counter.js"></script>
+<script src="../js/music-player.js"></script>
+
+</body>
+</html>

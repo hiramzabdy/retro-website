@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Sitio retro dedicado a la maravillosa d&#xE9;cada de los 2000. Recuerdos, m&#xFA;sica, videojuegos y mucho m&#xE1;s!">
+<title>~*~ Retro 2000s ~*~ Bienvenido!</title>
+<link rel="stylesheet" href="css/style.css">
+<style>
+.welcome-gif {
+  font-size: 60px;
+  animation: rainbow 3s linear infinite;
+}
+@keyframes rainbow {
+  0% { filter: hue-rotate(0deg); }
+  100% { filter: hue-rotate(360deg); }
+}
+.welcome-subtitle {
+  color: var(--neon-blue);
+  font-family: 'Comic Sans MS', cursive;
+  font-size: 16px;
+  font-style: italic;
+  margin: 5px 0;
+}
+.intro-box {
+  border: 3px dotted var(--neon-pink);
+  padding: 15px;
+  background: rgba(255, 110, 199, 0.05);
+  margin: 15px 0;
+  text-align: center;
+}
+.intro-box p {
+  color: var(--neon-green);
+  line-height: 1.8;
+  font-size: 14px;
+}
+.webring {
+  margin-top: 20px;
+  text-align: center;
+  padding: 10px;
+  background: rgba(0, 0, 0, 0.5);
+  border: 2px ridge var(--neon-purple);
+}
+.webring-title {
+  font-family: var(--font-pixel);
+  font-size: 8px;
+  color: var(--neon-purple);
+  margin-bottom: 10px;
+}
+</style>
+</head>
+<body>
+
+<canvas id="starfield"></canvas>
+<canvas id="cursor-trail"></canvas>
+
+<div class="construction-bar blink-fast">
+  &#x1F6A7; SITIO EN CONSTRUCCI&#xD3;N PERMANENTE &#x1F6A7; Disculpe las molestias! &#x1F6A7;
+</div>
+
+<table id="main-table" cellpadding="0" cellspacing="0">
+  <tr>
+    <td colspan="2" id="header">
+      <div class="welcome-gif">&#x1F320;</div>
+      <h1>~*~ RETRO 2000s ~*~</h1>
+      <p class="welcome-subtitle">Un viaje a la mejor d&#xE9;cada de la historia</p>
+      <div class="sparkle-divider">&#x2728; &#x2730; &#x2728; &#x2730; &#x2728; &#x2730; &#x2728;</div>
+    </td>
+  </tr>
+  <tr>
+    <td id="nav">
+      <div class="nav-title">&#x25C9; NAVEGACI&#xD3;N</div>
+
+      <a href="index.html" class="nav-link active">Inicio</a>
+      <a href="pages/musica.html" class="nav-link">M&#xFA;sica</a>
+      <a href="pages/tecnologia.html" class="nav-link">Tecnolog&#xED;a</a>
+      <a href="pages/videojuegos.html" class="nav-link">Videojuegos</a>
+      <a href="pages/internet.html" class="nav-link">Internet</a>
+      <a href="pages/guestbook.html" class="nav-link">Guestbook</a>
+      <a href="pages/galeria.html" class="nav-link">Galer&#xED;a</a>
+      <a href="pages/quiz.html" class="nav-link">Quiz</a>
+
+      <div class="nav-counter">
+        <div class="nav-counter-title">Visitante #</div>
+        <div class="nav-counter-digits counter-digits">0000001</div>
+      </div>
+
+      <div style="margin-top:15px; text-align:center;">
+        <div style="font-family:var(--font-pixel);font-size:6px;color:var(--neon-blue);margin-bottom:5px;">Web Rings</div>
+        <div class="badges" style="flex-direction:column;align-items:center;">
+          <div class="badge badge-geocities">GEO CITIES</div>
+          <div class="badge badge-windows">&#x2716; WIN XP</div>
+          <div class="badge badge-notepad">notepad++</div>
+          <div class="badge badge-netscape">NETSCAPE</div>
+        </div>
+      </div>
+    </td>
+    <td id="content">
+      <div class="marquee-container">
+        <span class="marquee-text">
+          &#x2728; Bienvenidos a RETRO 2000s &#x2728; El sitio m&#xE1;s &#xE9;pico del ciberespacio &#x2728; Hecho con HTML puro como en los viejos tiempos &#x2728; Agrega este sitio a FAVORITOS &#x2728; Manda MSN a tus amigos para que visiten &#x2728;
+        </span>
+      </div>
+
+      <div class="counter-container">
+        <div class="counter-label">&#x1F3AF; ERES EL VISITANTE N&#xDA;MERO:</div>
+        <div class="counter-digits">0000001</div>
+        <div style="font-size:9px;color:var(--neon-blue);margin-top:3px;">&#x1F447; Desde 01/01/2001 &#x1F447;</div>
+      </div>
+
+      <div class="rainbow-divider"><hr></div>
+
+      <div class="intro-box">
+        <p>
+          <strong class="glow-pink">&#x2728; &#xA1;Bienvenid@ a este rinc&#xF3;n del ciberespacio! &#x2728;</strong>
+        </p>
+        <p>
+          &#x2B50; Este sitio es un homenaje a los maravillosos a&#xF1;os 2000-2009. &#x2B50;<br>
+          Aqu&#xED; recordaremos la m&#xFA;sica que bailamos en el antro, los videojuegos que<br>
+          nos hac&#xED;an ir al cyber despu&#xE9;s de la escuela, la tecnolog&#xED;a que nos<br>
+          volaba la cabeza (&#xA1;64MB de RAM era un lujo!) y el internet que<br>
+          nos conectaba a 56kbps por el m&#xF3;dem de Telmex.
+        </p>
+        <p style="color:var(--neon-yellow); margin-top:8px;">
+          &#x2728; Ponte c&#xF3;mod@, pon tu Winamp con tu playlist favorita,<br>
+          abre el MSN (no te olvides de ponerte "Ausente"),<br>
+          y disfruta de este viaje al pasado. &#x2728;
+        </p>
+      </div>
+
+      <div class="rainbow-divider"><hr></div>
+
+      <h2>&#x1F4C5; Novedades / Update Log</h2>
+
+      <div class="window-box">
+        <div class="window-title">
+          <span>&#x1F4C4; updates.txt - Notepad</span>
+          <div class="window-buttons">
+            <span class="window-btn minimize">_</span>
+            <span class="window-btn maximize">&#x25A1;</span>
+            <span class="window-btn close">X</span>
+          </div>
+        </div>
+        <div class="window-body">
+          <div class="update-log">
+            <div class="update-entry">
+              <span class="update-date">10/05/2026</span>
+              <span class="update-badge new">NEW!</span><br>
+              Sitio lanzado! Agregadas secciones de m&#xFA;sica, tecnolog&#xED;a, videojuegos e internet. &#xA1;Firma el guestbook!
+            </div>
+            <div class="update-entry">
+              <span class="update-date">05/05/2026</span><br>
+              &#x1F3AE; Agregada secci&#xF3;n de Quiz para medir qu&#xE9; tan 2000s eres.
+            </div>
+            <div class="update-entry">
+              <span class="update-date">01/05/2026</span><br>
+              &#x1F3B5; Reproductor estilo Winamp funcionando. &#xA1;8-bit music FTW!
+            </div>
+            <div class="update-entry">
+              <span class="update-date">26/04/2026</span><br>
+              &#x2728; Agregada galer&#xED;a de GIFs animados (lo m&#xE1;s 2000s ever).
+            </div>
+            <div class="update-entry">
+              <span class="update-date">20/04/2026</span><br>
+              &#x1F4AC; Libro de visitas implementado. &#xA1;Deja tu firma!
+            </div>
+            <div class="update-entry">
+              <span class="update-date">15/04/2026</span><br>
+              &#x1F319; Fondo espacial animado y cursor con estela de estrellas implementados.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="rainbow-divider"><hr></div>
+
+      <div class="card-grid">
+        <div class="card">
+          <h4>&#x1F3B5; M&#xFA;sica</h4>
+          <p>Pop, Nu-Metal, Reggaet&#xF3;n... La &#xE9;poca dorada de MTV, Napster y las quemadas de CD.</p>
+        </div>
+        <div class="card">
+          <h4>&#x1F4F1; Tecnolog&#xED;a</h4>
+          <p>Nokia, Windows XP, Pentium 4... Cuando 256MB de RAM eran futuristas.</p>
+        </div>
+        <div class="card">
+          <h4>&#x1F3AE; Videojuegos</h4>
+          <p>PS2, Counter-Strike 1.6, Ragnar&#xF6;k Online... horas infinitas en el cyber.</p>
+        </div>
+        <div class="card">
+          <h4>&#x1F310; Internet</h4>
+          <p>GeoCities, Fotolog, MSN Messenger, NeoPets... la era dorada de la web.</p>
+        </div>
+      </div>
+
+      <div class="rainbow-divider"><hr></div>
+
+      <div class="webring">
+        <div class="webring-title">&#x2B50; RETRO WEB RING &#x2B50;</div>
+        <div class="badges">
+          <div class="badge badge-geocities">GEO CITIES</div>
+          <div class="badge badge-notepad">notepad++</div>
+          <div class="badge badge-netscape">NETSCAPE</div>
+          <div class="badge badge-ie">IE 5.0+</div>
+          <div class="badge badge-winamp" style="width:auto;padding:0 8px;">&#x266A; WINAMP</div>
+          <div class="badge badge-counter" style="width:auto;padding:0 8px;">800x600</div>
+        </div>
+      </div>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2" id="footer">
+      <p class="footer-text">
+        &#xA9; 2001-2009 Retro 2000s. Todos los derechos reservados.
+      </p>
+      <div class="footer-credits">
+        <span>&#x2728; Hecho con Notepad</span>
+        <span>&#x2728; Pure HTML 4.01</span>
+        <span>&#x2728; CSS + JS Vanilla</span>
+        <span>&#x2728; Sin frameworks</span>
+      </div>
+      <p style="font-size:8px;color:var(--neon-blue);margin-top:8px;">
+        &#x1F310; Mejor visto en 800x600 | Compatible con IE 5.0+, Netscape Navigator, Firefox 1.0 &#x1F310;
+      </p>
+    </td>
+  </tr>
+</table>
+
+<div id="music-player">
+  <div class="player-window">
+    <div class="player-titlebar">
+      <span>&#x266B; Winamp 2.91</span>
+      <span class="window-btn close">X</span>
+    </div>
+    <div class="player-body">
+      <div class="player-display">
+        <div class="player-title marquee">Complicated</div>
+        <div class="player-artist">Avril Lavigne</div>
+        <div class="player-progress">
+          <div class="player-progress-fill" style="width:0%"></div>
+        </div>
+        <div class="player-time">
+          <span class="player-current-time">0:00</span>
+          <span class="player-total-time">3:20</span>
+        </div>
+      </div>
+      <div class="player-controls">
+        <button class="player-btn player-btn-prev" title="Anterior">&#x25C0;&#x25C0;</button>
+        <button class="player-btn player-btn-play" title="Play/Pause">&#x25B6;</button>
+        <button class="player-btn player-btn-stop" title="Detener">&#x25A0;</button>
+        <button class="player-btn player-btn-next" title="Siguiente">&#x25B6;&#x25B6;</button>
+      </div>
+      <div class="player-volume">
+        <label>&#x1F50A;</label>
+        <input type="range" min="0" max="1" step="0.1" value="0.7">
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="js/main.js"></script>
+<script src="js/counter.js"></script>
+<script src="js/music-player.js"></script>
+
+</body>
+</html>
