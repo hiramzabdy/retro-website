@@ -26,19 +26,6 @@ Un sitio web funcional con estética retro de los 2000s, creado con HTML/CSS/JS 
 - **Scrollbar personalizada** retro neón
 - **Compatible con** IE 5.0+, Netscape Navigator, Firefox 1.0 (mentira, pero se ve cool decirlo)
 
-## Uso como submódulo
-
-Este proyecto se usa como submódulo en [TWSF](https://github.com/hiramzabdy/TWSF) en `public/retro/`.
-Para actualizar el submódulo a la última versión:
-
-```sh
-cd TWSF/public/retro
-git pull origin main
-cd ../..
-git add public/retro
-git commit -m "chore: update retro submodule"
-```
-
 ## Cómo correrlo
 
 ```bash
